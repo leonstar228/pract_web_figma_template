@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Marketplace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M4.5 9.33789C4.91421 9.33789 5.25 9.67368 5.25 10.0879V19.5004H18.75V10.0879C18.75 9.67368 19.0858 9.33789 19.5 9.33789C19.9142 9.33789 20.25 9.67368 20.25 10.0879V19.5004C20.25 19.8982 20.092 20.2797 19.8107 20.561C19.5294 20.8424 19.1478 21.0004 18.75 21.0004H5.25C4.85218 21.0004 4.47065 20.8424 4.18934 20.561C3.90804 20.2797 3.75 19.8982 3.75 19.5004V10.0879C3.75 9.67368 4.08579 9.33789 4.5 9.33789Z"
+                        fill="#A259FF" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M2.25 3.75C2.25 3.33579 2.58579 3 3 3H21C21.4142 3 21.75 3.33579 21.75 3.75C21.75 4.16421 21.4142 4.5 21 4.5H3C2.58579 4.5 2.25 4.16421 2.25 3.75Z"
+                        fill="#A259FF" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3 5.25C3.41421 5.25 3.75 5.58579 3.75 6V7.5C3.75 8.09674 3.98705 8.66903 4.40901 9.09099C4.83097 9.51295 5.40326 9.75 6 9.75C6.59674 9.75 7.16903 9.51295 7.59099 9.09099C8.01295 8.66903 8.25 8.09674 8.25 7.5V6C8.25 5.58579 8.58579 5.25 9 5.25C9.41421 5.25 9.75 5.58579 9.75 6V7.5C9.75 8.49456 9.35491 9.44839 8.65165 10.1516C7.94839 10.8549 6.99456 11.25 6 11.25C5.00544 11.25 4.05161 10.8549 3.34835 10.1516C2.64509 9.44839 2.25 8.49456 2.25 7.5V6C2.25 5.58579 2.58579 5.25 3 5.25Z"
+                        fill="#A259FF" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9 5.25C9.41421 5.25 9.75 5.58579 9.75 6V7.5C9.75 8.09674 9.98705 8.66903 10.409 9.09099C10.831 9.51295 11.4033 9.75 12 9.75C12.5967 9.75 13.169 9.51295 13.591 9.09099C14.0129 8.66903 14.25 8.09674 14.25 7.5V6C14.25 5.58579 14.5858 5.25 15 5.25C15.4142 5.25 15.75 5.58579 15.75 6V7.5C15.75 8.49456 15.3549 9.44839 14.6516 10.1516C13.9484 10.8549 12.9946 11.25 12 11.25C11.0054 11.25 10.0516 10.8549 9.34835 10.1516C8.64509 9.44839 8.25 8.49456 8.25 7.5V6C8.25 5.58579 8.58579 5.25 9 5.25Z"
+                        fill="#A259FF" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M15 5.25C15.4142 5.25 15.75 5.58579 15.75 6V7.5C15.75 8.09674 15.9871 8.66903 16.409 9.09099C16.831 9.51295 17.4033 9.75 18 9.75C18.5967 9.75 19.169 9.51295 19.591 9.09099C20.0129 8.66903 20.25 8.09674 20.25 7.5V6C20.25 5.58579 20.5858 5.25 21 5.25C21.4142 5.25 21.75 5.58579 21.75 6V7.5C21.75 8.49456 21.3549 9.44839 20.6516 10.1516C19.9484 10.8549 18.9946 11.25 18 11.25C17.0054 11.25 16.0516 10.8549 15.3484 10.1516C14.6451 9.44839 14.25 8.49456 14.25 7.5V6C14.25 5.58579 14.5858 5.25 15 5.25Z"
+                        fill="#A259FF" />
+                </svg>
+                <img src="./assets/img/logo.png" alt="Site Logo">
+            </div>
+
+            <div id="burgerMenu" class="burger-menu">
+                <svg id="openIcon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3 12C3 11.5858 3.33579 11.25 3.75 11.25H20.25C20.6642 11.25 21 11.5858 21 12C21 12.4142 20.6642 12.75 20.25 12.75H3.75C3.33579 12.75 3 12.4142 3 12Z"
+                        fill="white" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3 6C3 5.58579 3.33579 5.25 3.75 5.25H15C15.4142 5.25 15.75 5.58579 15.75 6C15.75 6.41421 15.4142 6.75 15 6.75H3.75C3.33579 6.75 3 6.41421 3 6Z"
+                        fill="white" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3 18C3 17.5858 3.33579 17.25 3.75 17.25H15C15.4142 17.25 15.75 17.5858 15.75 18C15.75 18.4142 15.4142 18.75 15 18.75H3.75C3.33579 18.75 3 18.4142 3 18Z"
+                        fill="white" />
+                </svg>
+                <i id="closeIcon" class="fa-solid fa-xmark d-none"></i>
+            </div>
+
+            <nav id="headerNav" class="header-nav">
+                <ul class="main-menu">
+                    <li><a href="#">Marketplace</a></li>
+                    <li><a href="#">Rankings</a></li>
+                    <li><a href="#">Connect a wallet</a></li>
+                </ul>
+                <ul class="main-registration">
+                    <li>
+                        <a href="#" class="btn_header box_small_pic_n_text">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M10 3.125C7.58375 3.125 5.625 5.08375 5.625 7.5C5.625 9.91625 7.58375 11.875 10 11.875C12.4162 11.875 14.375 9.91625 14.375 7.5C14.375 5.08375 12.4162 3.125 10 3.125ZM4.375 7.5C4.375 4.3934 6.8934 1.875 10 1.875C13.1066 1.875 15.625 4.3934 15.625 7.5C15.625 10.6066 13.1066 13.125 10 13.125C6.8934 13.125 4.375 10.6066 4.375 7.5Z"
+                                    fill="white" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M10.0001 13.124C8.57374 13.124 7.17251 13.4995 5.93728 14.2128C4.70205 14.926 3.67634 15.9518 2.96327 17.1872C2.79071 17.4861 2.40848 17.5886 2.10953 17.416C1.81058 17.2435 1.70812 16.8612 1.88068 16.5623C2.70345 15.1369 3.88696 13.9532 5.31223 13.1303C6.7375 12.3073 8.3543 11.874 10.0001 11.874C11.6459 11.874 13.2627 12.3073 14.688 13.1303C16.1132 13.9532 17.2968 15.1369 18.1195 16.5623C18.2921 16.8612 18.1896 17.2435 17.8907 17.416C17.5917 17.5886 17.2095 17.4861 17.0369 17.1872C16.3239 15.9518 15.2982 14.926 14.0629 14.2128C12.8277 13.4995 11.4265 13.124 10.0001 13.124Z"
+                                    fill="white" />
+                            </svg>
+                            <span>Sign Up</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero w-full">
+        <div class="hero-text">
+            <h1 class="hero-title">Discover Digital Art & Collect NFTs</h1>
+            <p class="text-regular">
+                NFT marketplace UI created with Anima for Figma. Collect, buy and sell art from more than 20k NFT
+                artists.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="./assets/img/hero-pic-1.png" alt="NFT Art">
+            </div>
+            <div class="card-content">
+                <h3 class="text-nft-name">Space Walking</h3>
+                <div class="box_small_pic_n_text">
+                    <img src="./assets/img/main-avatar-10.png" alt="Artist">
+                    <p class="text-nickname">Animakid</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-stats">
+            <a href="#" class="btn text-buttons box_small_pic_n_text">
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M6.67053 12.4494C6.78055 12.7766 6.60451 13.131 6.27734 13.241C5.21792 13.5973 4.65489 14.4866 4.35373 15.391C4.23414 15.7501 4.16189 16.0958 4.11848 16.3817C4.40434 16.3383 4.75006 16.266 5.10917 16.1464C6.01355 15.8453 6.9029 15.2823 7.25916 14.2228C7.36918 13.8957 7.7236 13.7196 8.05078 13.8296C8.37795 13.9397 8.55399 14.2941 8.44396 14.6213C7.9096 16.2103 6.58801 16.9715 5.50411 17.3324C4.95655 17.5148 4.44395 17.6048 4.0698 17.6497C3.88182 17.6722 3.72641 17.6836 3.616 17.6894C3.56074 17.6924 3.51658 17.6939 3.48505 17.6946C3.46928 17.695 3.45666 17.6952 3.44737 17.6954L3.43596 17.6955L3.43217 17.6955L3.43077 17.6955L3.43019 17.6955C3.42993 17.6955 3.42969 17.6955 3.42969 17.0705C2.80469 17.0705 2.80469 17.0702 2.80469 17.07L2.80469 17.0694L2.80469 17.068L2.80471 17.0642L2.80481 17.0528C2.80493 17.0435 2.80514 17.0309 2.80553 17.0151C2.80631 16.9836 2.80782 16.9394 2.81072 16.8842C2.81653 16.7738 2.82797 16.6184 2.85052 16.4304C2.8954 16.0562 2.98542 15.5436 3.16776 14.9961C3.5287 13.9122 4.28989 12.5906 5.87891 12.0562C6.20608 11.9462 6.5605 12.1222 6.67053 12.4494ZM3.42969 17.0705H2.80469C2.80469 17.4157 3.08451 17.6955 3.42969 17.6955V17.0705Z"
+                        fill="white" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M17.0462 3.45406C16.3208 3.34943 14.5351 3.31002 12.7076 5.13753L7.84482 10.0003L10.5 12.6555L15.3627 7.79271C17.1903 5.9652 17.1508 4.17951 17.0462 3.45406ZM17.2275 2.21727C16.2298 2.07282 14.0058 2.07157 11.8237 4.25365L6.519 9.55834C6.40179 9.67555 6.33594 9.83452 6.33594 10.0003C6.33594 10.166 6.40179 10.325 6.519 10.4422L10.0581 13.9813C10.3021 14.2254 10.6979 14.2254 10.9419 13.9813L16.2466 8.67659C18.4287 6.49452 18.4275 4.27052 18.283 3.27282C18.2465 3.0058 18.1235 2.75803 17.9329 2.5674C17.7422 2.37678 17.4945 2.25382 17.2275 2.21727Z"
+                        fill="white" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.922 8.49219C15.2672 8.49219 15.547 8.77201 15.547 9.11719V14.1641L15.5469 14.173C15.5423 14.5013 15.4086 14.8145 15.175 15.045L12.6527 17.575C12.4926 17.7349 12.2921 17.8484 12.0725 17.9033C11.853 17.9582 11.6227 17.9524 11.4061 17.8867C11.1896 17.8209 10.995 17.6976 10.843 17.5299C10.6912 17.3623 10.5877 17.1567 10.5435 16.9349C10.5434 16.9347 10.5435 16.9351 10.5435 16.9349L9.88731 13.6619C9.81946 13.3235 10.0388 12.9941 10.3773 12.9263C10.7157 12.8584 11.0451 13.0778 11.1129 13.4162L11.7694 16.6906L14.297 14.1552V9.11719C14.297 8.77201 14.5768 8.49219 14.922 8.49219Z"
+                        fill="white" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M6.32625 4.95319L6.33515 4.95312H11.382C11.7272 4.95312 12.007 5.23295 12.007 5.57812C12.007 5.9233 11.7272 6.20312 11.382 6.20312H6.34399L6.33894 6.20828L6.33891 6.20825L3.80859 8.73075L3.80956 8.73094L7.083 9.38719C7.42144 9.45504 7.6408 9.78441 7.57295 10.1229C7.5051 10.4613 7.17574 10.6807 6.83729 10.6128L3.56483 9.95675C3.56464 9.95671 3.56445 9.95668 3.56426 9.95664C3.34252 9.91244 3.1369 9.80892 2.96933 9.65711C2.80162 9.50516 2.6783 9.31054 2.61254 9.094C2.54677 8.87746 2.54103 8.64712 2.59592 8.42757C2.65081 8.20802 2.76427 8.00749 2.9242 7.84738L2.92514 7.84644L2.92514 7.84644L5.45424 5.32514C5.68475 5.09151 5.99796 4.95786 6.32625 4.95319Z"
+                        fill="white" />
+                </svg>
+                <span>Get Started</span>
+            </a>
+            <div class="hero-stats-box">
+                <div>
+                    <p>240k+</p>
+                    <p class="text-regular">Total Sale</p>
+                </div>
+                <div>
+                    <p>100k+</p>
+                    <p class="text-regular">Auctions</p>
+                </div>
+                <div>
+                    <p>240k+</p>
+                    <p class="text-regular">Artists</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="collection w-full">
+            <div class="collection-text">
+                <h2 class="text-headings">Trending Collection</h2>
+                <p class="text-regular">Checkout our weekly updated trending collection.</p>
+            </div>
+            <div class="collection-container">
+                <div class="collection-container-info">
+                    <img src="./assets/img/main-nft-pic-1.png" alt="">
+                    <img src="./assets/img/minor-nft-pic-1_1.png" alt="">
+                    <img src="./assets/img/minor-nft-pic-1_2.png" alt="">
+                    <div class="box-more-photos">
+                        <p>1025+</p>
+                    </div>
+                    <div class="collection-info-text">
+                        <h3 class="text-nft-name">DSGN Animals</h3>
+                        <div class="box_small_pic_n_text">
+                            <img src="./assets/img/main-avatar-6.png" alt="">
+                            <p class="text-nickname">MrFox</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-container-info">
+                    <img src="./assets/img/main-nft-pic-2.png" alt="" class="main-nft">
+                    <img src="./assets/img/minor-nft-pic-2_1.png" alt="" class="minor-nft">
+                    <img src="./assets/img/minor-nft-pic-2_2.png" alt="" class="minor-nft">
+                    <div class="box-more-photos">
+                        <p>1025+</p>
+                    </div>
+                    <div class="collection-info-text">
+                        <h3 class="text-nft-name">Magic Mushrooms</h3>
+                        <div class="box_small_pic_n_text">
+                            <img src="./assets/img/main-avatar-7.png" alt="">
+                            <p class="text-nickname">Shroomie</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collection-container-info">
+                    <img src="./assets/img/main-nft-pic-3.png" alt="" class="main-nft">
+                    <img src="./assets/img/minor-nft-pic-3_1.png" alt="" class="minor-nft">
+                    <img src="./assets/img/minor-nft-pic-3_2.png" alt="" class="minor-nft">
+                    <div class="box-more-photos">
+                        <p>1025+</p>
+                    </div>
+                    <div class="collection-info-text">
+                        <h3 class="text-nft-name">Disco Machines</h3>
+                        <div class="box_small_pic_n_text">
+                            <img src="./assets/img/avatar-13.png" alt="">
+                            <p class="text-nickname">BeKind2Robots</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="creators">
+            <div class="creators-text">
+                <h2 class="text-headings">Top creators</h2>
+                <p class="text-regular">Checkout Top Rated Creators on the NFT Marketplace</p>
+            </div>
+            <div class="creators-container">
+                <!-- 1 -->
+                <div class="creator-card">
+                    <div class="creator-card-number">
+                        <p>1</p>
+                    </div>
+                    <img src="./assets/img/main-avatar-1.png" alt="">
+                    <div class="creator-info w-full">
+                        <h3>Keepitreal</h3>
+                        <div class="wrap-price">
+                            <span>Total Sales: </span>
+                            <p>34.53 ETH</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="creator-card">
+                    <div class="creator-card-number">
+                        <p>2</p>
+                    </div>
+                    <img src="./assets/img/main-avatar-2.png" alt="">
+                    <div class="creator-info w-full">
+                        <h3>DigiLab</h3>
+                        <div class="wrap-price">
+                            <span>Total Sales: </span>
+                            <p>32.13 ETH</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="creator-card">
+                    <div class="creator-card-number">
+                        <p>3</p>
+                    </div>
+                    <img src="./assets/img/main-avatar-3.png" alt="">
+                    <div class="creator-info w-full">
+                        <h3>GravityOne</h3>
+                        <div class="wrap-price">
+                            <span>Total Sales: </span>
+                            <p>28.93 ETH</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="creator-card">
+                    <div class="creator-card-number">
+                        <p>4</p>
+                    </div>
+                    <img src="./assets/img/main-avatar-4.png" alt="">
+                    <div class="creator-info w-full">
+                        <h3>Juanie</h3>
+                        <div class="wrap-price">
+                            <span>Total Sales: </span>
+                            <p>25.30 ETH</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="creator-card">
+                    <div class="creator-card-number">
+                        <p>5</p>
+                    </div>
+                    <img src="./assets/img/main-avatar-5.png" alt="">
+                    <div class="creator-info w-full">
+                        <h3>BlueWhale</h3>
+                        <div class="wrap-price">
+                            <span>Total Sales: </span>
+                            <p>22.22 ETH</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div class="creator-card">
+                    <div class="creator-card-number">
+                        <p>6</p>
+                    </div>
+                    <img src="./assets/img/main-avatar-6.png" alt="">
+                    <div class="creator-info w-full">
+                        <h3>mr fox</h3>
+                        <div class="wrap-price">
+                            <span>Total Sales: </span>
+                            <p>19.28 ETH</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 7 -->
+                <div class="creator-card">
+                    <div class="creator-card-number">
+                        <p>7</p>
+                    </div>
+                    <img src="./assets/img/main-avatar-7.png" alt="">
+                    <div class="creator-info w-full">
+                        <h3>Shroomie</h3>
+                        <div class="wrap-price">
+                            <span>Total Sales: </span>
+                            <p>34.53 ETH</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 8 -->
+                <div class="creator-card">
+                    <div class="creator-card-number">
+                        <p>8</p>
+                    </div>
+                    <img src="./assets/img/main-avatar-8.png" alt="">
+                    <div class="creator-info w-full">
+                        <h3>robotica</h3>
+                        <div class="wrap-price">
+                            <span>Total Sales: </span>
+                            <p>34.53 ETH</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 9 -->
+                <div class="creator-card">
+                    <div class="creator-card-number">
+                        <p>9</p>
+                    </div>
+                    <img src="./assets/img/main-avatar-9.png" alt="">
+                    <div class="creator-info w-full">
+                        <h3>RustyRobot</h3>
+                        <div class="wrap-price">
+                            <span>Total Sales: </span>
+                            <p>34.53 ETH</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 10 -->
+                <div class="creator-card">
+                    <div class="creator-card-number">
+                        <p>10</p>
+                    </div>
+                    <img src="./assets/img/main-avatar-10.png" alt="">
+                    <div class="creator-info w-full">
+                        <h3>animakid</h3>
+                        <div class="wrap-price">
+                            <span>Total Sales: </span>
+                            <p>34.53 ETH</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 11 -->
+                <div class="creator-card">
+                    <div class="creator-card-number">
+                        <p>11</p>
+                    </div>
+                    <img src="./assets/img/main-avatar-11.png" alt="">
+                    <div class="creator-info w-full">
+                        <h3>Dotgu</h3>
+                        <div class="wrap-price">
+                            <span>Total Sales: </span>
+                            <p>34.53 ETH</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 12 -->
+                <div class="creator-card">
+                    <div class="creator-card-number">
+                        <p>12</p>
+                    </div>
+                    <img src="./assets/img/main-avatar-12.png" alt="">
+                    <div class="creator-info w-full">
+                        <h3>Ghiblier</h3>
+                        <div class="wrap-price">
+                            <span>Total Sales: </span>
+                            <p>34.53 ETH</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="" class="btn text-buttons box_small_pic_n_text">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M6.17053 12.4494C6.28055 12.7766 6.10451 13.131 5.77734 13.241C4.71792 13.5973 4.15489 14.4866 3.85373 15.391C3.73414 15.7501 3.66189 16.0958 3.61848 16.3817C3.90434 16.3383 4.25006 16.266 4.60917 16.1464C5.51355 15.8453 6.4029 15.2823 6.75916 14.2228C6.86918 13.8957 7.2236 13.7196 7.55078 13.8296C7.87795 13.9397 8.05399 14.2941 7.94396 14.6213C7.4096 16.2103 6.08801 16.9715 5.00411 17.3324C4.45655 17.5148 3.94395 17.6048 3.5698 17.6497C3.38182 17.6722 3.22641 17.6836 3.116 17.6894C3.06074 17.6924 3.01658 17.6939 2.98505 17.6946C2.96928 17.695 2.95666 17.6952 2.94737 17.6954L2.93596 17.6955L2.93217 17.6955L2.93077 17.6955L2.93019 17.6955C2.92993 17.6955 2.92969 17.6955 2.92969 17.0705C2.30469 17.0705 2.30469 17.0702 2.30469 17.07L2.30469 17.0694L2.30469 17.068L2.30471 17.0642L2.30481 17.0528C2.30493 17.0435 2.30514 17.0309 2.30553 17.0151C2.30631 16.9836 2.30782 16.9394 2.31072 16.8842C2.31653 16.7738 2.32797 16.6184 2.35052 16.4304C2.3954 16.0562 2.48542 15.5436 2.66776 14.9961C3.0287 13.9122 3.78989 12.5906 5.37891 12.0562C5.70608 11.9462 6.0605 12.1222 6.17053 12.4494ZM2.92969 17.0705H2.30469C2.30469 17.4157 2.58451 17.6955 2.92969 17.6955V17.0705Z"
+                        fill="#A259FF" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M16.5462 3.45406C15.8208 3.34943 14.0351 3.31002 12.2076 5.13753L7.34482 10.0003L10 12.6555L14.8627 7.79271C16.6903 5.9652 16.6508 4.17951 16.5462 3.45406ZM16.7275 2.21727C15.7298 2.07282 13.5058 2.07157 11.3237 4.25365L6.019 9.55834C5.90179 9.67555 5.83594 9.83452 5.83594 10.0003C5.83594 10.166 5.90179 10.325 6.019 10.4422L9.55806 13.9813C9.80214 14.2254 10.1979 14.2254 10.4419 13.9813L15.7466 8.67659C17.9287 6.49452 17.9275 4.27052 17.783 3.27282C17.7465 3.0058 17.6235 2.75803 17.4329 2.5674C17.2422 2.37678 16.9945 2.25382 16.7275 2.21727Z"
+                        fill="#A259FF" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.422 8.49219C14.7672 8.49219 15.047 8.77201 15.047 9.11719V14.1641L15.0469 14.173C15.0423 14.5013 14.9086 14.8145 14.675 15.045L12.1527 17.575C11.9926 17.7349 11.7921 17.8484 11.5725 17.9033C11.353 17.9582 11.1227 17.9524 10.9061 17.8867C10.6896 17.8209 10.495 17.6976 10.343 17.5299C10.1912 17.3623 10.0877 17.1567 10.0435 16.9349C10.0434 16.9347 10.0435 16.9351 10.0435 16.9349L9.38731 13.6619C9.31946 13.3235 9.53882 12.9941 9.87727 12.9263C10.2157 12.8584 10.5451 13.0778 10.6129 13.4162L11.2694 16.6906L13.797 14.1552V9.11719C13.797 8.77201 14.0768 8.49219 14.422 8.49219Z"
+                        fill="#A259FF" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5.82625 4.95319L5.83515 4.95312H10.882C11.2272 4.95312 11.507 5.23295 11.507 5.57812C11.507 5.9233 11.2272 6.20312 10.882 6.20312H5.84399L5.83894 6.20828L5.83891 6.20825L3.30859 8.73075L3.30956 8.73094L6.583 9.38719C6.92144 9.45504 7.1408 9.78441 7.07295 10.1229C7.0051 10.4613 6.67574 10.6807 6.33729 10.6128L3.06483 9.95675C3.06464 9.95671 3.06445 9.95668 3.06426 9.95664C2.84252 9.91244 2.6369 9.80892 2.46933 9.65711C2.30162 9.50516 2.1783 9.31054 2.11254 9.094C2.04677 8.87746 2.04103 8.64712 2.09592 8.42757C2.15081 8.20802 2.26427 8.00749 2.4242 7.84738L2.42514 7.84644L2.42514 7.84644L4.95424 5.32514C5.18475 5.09151 5.49796 4.95786 5.82625 4.95319Z"
+                        fill="#A259FF" />
+                </svg>
+                <span>View Rankings</span>
+            </a>
+        </section>
+    </main>
+    <script src="./assets/js/scripts.js"></script>
+</body>
+
+</html>

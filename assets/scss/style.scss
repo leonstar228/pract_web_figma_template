@@ -1,0 +1,120 @@
+@import './variables', './header', './hero', './collection', './creators';
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+// ==============================
+// Global
+// ==============================
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $main-bg-color;
+    color: $main-text-color;
+    font-family: $font-primary;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.d-none {
+    display: none;
+}
+
+// ==============================
+// Typography
+// ==============================
+.text-section-title {
+    @include text-style(1.75rem, 600);
+    margin-bottom: 10px;
+}
+
+.text-headings {
+    @include text-style(1.375rem, 600);
+    margin-bottom: 10px;
+}
+
+.text-regular {
+    @include text-style(1rem);
+}
+
+.text-nft-name{
+    @include text-style(1.375rem, 600);
+    margin-bottom: 10px;
+}
+.text-nickname{
+    @include text-style(1rem);
+}
+
+.text-buttons {
+    @include text-style(1rem, 600);
+}
+
+// ==============================
+// Small Box & Buttons
+// ==============================
+.box_small_pic_n_text {
+    @include flex(row, flex-start, center);
+    gap: 12px;
+    
+    img {
+        width: 24px;
+        border-radius: 50%;
+      }
+}
+
+.btn {
+    @include flex(row, center, center);
+    border-radius: 20px;
+    padding: 19px 0;
+    width: 100%;
+    color: $main-text-color;
+}
+
+// ==============================
+// Media Queries
+// ==============================
+@media (min-width: $bp-md) {
+    .btn {
+        padding: 19px 50px;
+        width: fit-content;
+    }
+
+    .text-section-title {
+        line-height: 120%;
+    }
+}
+
+@media (min-width: $bp-lg) {
+    main{
+        max-width: 2000px;
+        margin: 0 auto;
+    }
+    .text-section-title {
+        font-size: 2.375rem;
+        line-height: 120%;
+    }
+
+    .text-headings {
+        font-size: 2.375rem;
+        line-height: 120%;
+    }
+
+    .text-regular {
+        font-size: 1.375rem;
+        line-height: 160%;
+    }
+}

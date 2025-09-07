@@ -1,0 +1,101 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: $main-bg-color;
+
+    &-inner {
+        @include flex(row, space-between, center);
+        @include phone-limitation(15px, 15px);
+
+        .logo img {
+            width: 150px;
+        }
+
+        .burger-menu {
+            cursor: pointer;
+        }
+
+        .header-nav {
+            position: absolute;
+            top: 100%;
+            right: -100%;
+            background-color: $box-bg-color;
+            height: calc(100vh - 54px);
+            transition: right 1s ease;
+            width: 100%;
+            z-index: 1000;
+
+            &__open {
+                right: 0;
+            }
+
+            @include flex(column, center, center);
+
+            a {
+                @include text-style(1rem, 600);
+                color: $main-text-color;
+            }
+        }
+
+        .main-menu {
+            @include flex(column, center, center);
+            gap: 15px;
+        }
+
+        .main-registration {
+            margin-top: 30px;
+        }
+
+        .btn_header {
+            @include flex(row, center, center);
+            border-radius: 20px;
+            background-color: $main-color;
+            padding: 19px 30px;
+            color: #fff;
+        }
+    }
+}
+
+@media (min-width: $bp-md) {
+    .header-inner {
+        padding: 15px 50px;
+    }
+}
+
+@media (min-width: $bp-lg) {
+    .burger-menu {
+        display: none; // кнопка схована
+    }
+
+    .header-inner {
+        padding: 20px 50px;
+        @include flex(row, space-between, center);
+
+        .header-nav {
+            display: flex;
+            flex-direction: row; // горизонтально
+            position: static; // не абсолютне
+            height: auto;
+            background-color: transparent;
+            width: fit-content; // під контент
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: none;
+            .main-registration {
+                display: flex;
+                margin: 0;
+            }
+            .main-menu{
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                margin: 0;
+                li {
+                    padding: 12px 20px;
+                }
+            }
+        }
+    }
+}

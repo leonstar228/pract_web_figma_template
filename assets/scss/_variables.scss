@@ -1,0 +1,53 @@
+$main-color: #A259FF;
+$box-bg-color: #3B3B3B;
+$main-bg-color: #2B2B2B;
+$main-text-color: #fff;
+$span-text-color: #858584;
+
+$font-primary: "Work Sans", sans-serif;
+$font-mono: "Space Mono", monospace;
+
+$fs-section-title: 1.75rem;
+$fs-heading: 1.375rem;
+$fs-regular: 1rem;
+
+$bp-md: 834px;
+$bp-lg: 1280px;
+
+// ==============================
+// Mixins
+// ==============================
+@mixin flex($dir: row, $justify: flex-start, $align: stretch) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin text-style($size, $weight: 400, $lh: 140%) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $lh;
+}
+
+@mixin btn($bg-color: $main-color, $radius: 20px, $padding: 19px 30px) {
+    @include flex(center, center);
+    background-color: $bg-color;
+    border-radius: $radius;
+    padding: $padding;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+@mixin phone-limitation($top: 40px, $bottom: $top) {
+    padding: $top 30px $bottom;
+}
+
+@mixin tablet-limitation($top: 40px, $bottom: $top) {
+    padding: $top 72px $bottom;
+}
+
+@mixin desktop-limitation($top: 80px, $bottom: $top) {
+    padding: $top 115px $bottom;
+}
