@@ -13,13 +13,13 @@
   &-stats {
     @include flex(column, flex-start, flex-start);
     gap: 30px;
-    
-    a{
+
+    a {
       background-color: $main-color;
     }
 
     &-box {
-      @include flex(row, flex-start, flex-start);
+      @include flex(row, space-between, flex-start);
       width: 100%;
       gap: 30px;
 
@@ -74,8 +74,12 @@
 
   }
 
-  .hero-stats-box div {
-    width: 90px;
+  .hero-stats-box {
+    justify-content: flex-start;
+
+    div {
+      width: 90px;
+    }
   }
 
   .text-section-title {
