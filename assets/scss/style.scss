@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import './variables', './header', './hero', './collection', './creators', './_catagories.scs';
+@import './variables', './header', './hero', './collection', './creators', './catagories';
 // ==============================
 // Global
 // ==============================
@@ -45,7 +45,6 @@ ul {
 // ==============================
 .text-section-title {
     @include text-style(1.75rem, 600);
-    margin-bottom: 10px;
 }
 
 .text-headings {
@@ -97,10 +96,6 @@ ul {
     .btn {
         padding: 19px 50px;
         width: fit-content;
-    }
-
-    .text-section-title {
-        line-height: 120%;
     }
 }
 

@@ -8,3 +8,10 @@ burgerMenu.addEventListener('click', () =>{
     closeIcon.classList.toggle('d-none')
     headerNav.classList.toggle('header-nav__open')
 })
+
+const cards = document.querySelectorAll('.catagory-card');
+
+cards.forEach((card, index) => {
+    const bgPhoto = card.querySelector('.bg-photo');
+    bgPhoto.style.backgroundImage = `url(/assets/img/catagory-pic-${index + 1}.png)`;
+});
