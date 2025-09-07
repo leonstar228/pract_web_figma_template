@@ -1,0 +1,6 @@
+.catagories {
+    display: grid;
+    gap: 40px;
+    margin: 0 auto;
+    @include phone-limitation();
+}

@@ -1,7 +1,6 @@
-@import './variables', './header', './hero', './collection', './creators';
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
+@import './variables', './header', './hero', './collection', './creators', './_catagories.scs';
 // ==============================
 // Global
 // ==============================
@@ -15,6 +14,8 @@ body {
     background-color: $main-bg-color;
     color: $main-text-color;
     font-family: $font-primary;
+}
+html, body{
     overflow-x: hidden;
 }
 
@@ -104,7 +105,6 @@ ul {
 }
 
 @media (min-width: $bp-lg) {
-    
     .text-section-title {
         font-size: 2.375rem;
         line-height: 120%;

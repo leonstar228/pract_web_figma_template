@@ -350,6 +350,9 @@
   background-color: #3B3B3B;
   border-radius: 20px;
 }
+.creators-container .creator-card:nth-child(n+6) {
+  display: none;
+}
 .creators-container .creator-card-number {
   position: absolute;
   top: 13px;
@@ -429,6 +432,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
+  .creators-container .creator-card:nth-child(6) {
+    display: flex;
+  }
 }
 @media (min-width: 1280px) {
   .creators {
@@ -460,6 +466,9 @@
     text-align: center;
     aspect-ratio: 1/1;
   }
+  .creators-container .creator-card:nth-child(n+7) {
+    display: flex;
+  }
   .creators-container .creator-card img {
     width: 70%;
     height: 70%;
@@ -479,6 +488,9 @@ body {
   background-color: #2B2B2B;
   color: #fff;
   font-family: "Work Sans", sans-serif;
+}
+
+html, body {
   overflow-x: hidden;
 }
 

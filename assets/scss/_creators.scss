@@ -23,6 +23,9 @@
             background-color: $box-bg-color;
             border-radius: 20px;
 
+            &:nth-child(n+6) {
+                display: none;
+            }
             &-number {
                 position: absolute;
                 top: 13px;
@@ -76,7 +79,6 @@
     .creators {
         @include tablet-limitation();
         
-        // Додаємо grid для розміщення тексту та кнопки в одному рядку
         display: grid;
         grid-template-columns: 1fr auto;
         grid-template-rows: auto auto;
@@ -88,13 +90,12 @@
             grid-row: 1;
         }
 
-        // Стилі для кнопки, яка знаходиться на тому ж рівні
         & > .btn {
             grid-column: 2 / 3;
             grid-row: 1;
             align-self: center;
             white-space: nowrap;
-            margin: 0; // Прибираємо можливі маргіни
+            margin: 0;
         }
 
         &-container {
@@ -102,6 +103,10 @@
             grid-row: 2;
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
+
+            .creator-card:nth-child(6){
+                display: flex;
+            }
         }
     }
 }
@@ -110,7 +115,6 @@
     .creators {
         @include desktop-limitation();
 
-        // Оновлюємо grid для десктопної версії
         grid-template-columns: 1fr auto;
         grid-template-rows: auto auto;
         gap: 30px;
@@ -136,6 +140,10 @@
                 @include flex(column, center, center);
                 text-align: center;
                 aspect-ratio: 1 / 1;
+
+                &:nth-child(n+7) {
+                    display: flex;
+                }
 
                 img {
                     width: 70%;
