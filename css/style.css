@@ -768,6 +768,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
+  gap: 30px;
 }
 .follow-card img {
   max-width: 100%;
@@ -775,11 +776,16 @@
   aspect-ratio: 1.24/1;
   -o-object-fit: cover;
      object-fit: cover;
+  height: 100%;
 }
-.follow-card .follow-text {
-  margin: 30px 0 40px;
+.follow-card .follow-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
 }
-.follow-card form {
+.follow-card .follow-info form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -787,7 +793,7 @@
   gap: 16px;
   align-items: stretch;
 }
-.follow-card form input {
+.follow-card .follow-info form input {
   width: 100%;
   padding: 11px 20px;
   border: 1px solid #858584;
@@ -799,13 +805,19 @@
   font-weight: 400;
   line-height: 140%;
 }
-.follow-card form input::-moz-placeholder {
+.follow-card .follow-info form input::-moz-placeholder {
   color: #2B2B2B;
 }
-.follow-card form input::placeholder {
+.follow-card .follow-info form input::placeholder {
   color: #2B2B2B;
 }
-.follow-card form .btn {
+.follow-card .follow-info form .btn-join {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
   background-color: #A259FF;
   padding: 11px 20px;
   height: 100%;
@@ -816,10 +828,60 @@
   .follow {
     padding: 40px 72px 40px;
   }
+  .follow-card {
+    padding: 40px 30px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 30px;
+    background-color: #3B3B3B;
+    border-radius: 20px;
+  }
+  .follow-card img {
+    width: 50%;
+  }
+  .follow-card .follow-info {
+    gap: 40px;
+  }
+  .follow-card .follow-info form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 16px;
+    align-items: stretch;
+  }
+  .follow-card .follow-info form input {
+    padding: 19px 20px;
+  }
+  .follow-card .follow-info form .btn-join {
+    padding: 19px 50px;
+  }
 }
 @media (min-width: 1280px) {
   .follow {
     padding: 80px 115px 80px;
+  }
+  .follow-card {
+    padding: 60px;
+    gap: 80px;
+  }
+  .follow-card img {
+    max-height: 425px;
+  }
+  .follow-card .follow-info form {
+    position: relative;
+    display: flex;
+  }
+  .follow-card .follow-info form input {
+    padding: 19px 220px 20px 20px;
+    width: 100%;
+  }
+  .follow-card .follow-info form .btn-join {
+    position: absolute;
+    right: 0;
+    padding: 19px 50px;
   }
 }
 * {

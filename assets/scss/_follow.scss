@@ -4,37 +4,44 @@
 
     &-card {
         @include flex(column);
+        gap: 30px; 
 
         img {
             max-width: 100%;
             border-radius: 20px;
             aspect-ratio: 1.24 / 1;
             object-fit: cover;
+            height: 100%;
         }
-        .follow-text{
-            margin: 30px 0 40px;
-        }
-        form{
-            @include flex(column);
-            gap: 16px;
-            align-items: stretch;
+        .follow-info{
+            @include flex(column, center);
+            gap: 40px;
 
-            input{
-                width: 100%;
-                padding: 11px 20px;
-                border: 1px solid $span-text-color;
-                border-radius: 20px;
-                appearance: none;
-                @include text-style(1rem);
-                &::placeholder{
-                    color: $main-bg-color;
+            form{
+                @include flex(column);
+                gap: 16px;
+                align-items: stretch;
+    
+                input{
+                    width: 100%;
+                    padding: 11px 20px;
+                    border: 1px solid $span-text-color;
+                    border-radius: 20px;
+                    appearance: none;
+                    @include text-style(1rem);
+                    &::placeholder{
+                        color: $main-bg-color;
+                    }
                 }
-            }
-            .btn{
-                background-color: $main-color;
-                padding: 11px 20px;
-                height: 100%;
-                border: 1px solid $main-color;
+                .btn-join{
+                    border-radius: 20px;
+                    @include flex(row, center, center);
+                    color: $main-text-color;
+                    background-color: $main-color;
+                    padding: 11px 20px;
+                    height: 100%;
+                    border: 1px solid $main-color;
+                }
             }
         }
     }
@@ -43,11 +50,68 @@
 @media (min-width: $bp-md) {
     .follow {
         @include tablet-limitation();
+
+        &-card{
+            @include phone-limitation();
+            @include flex();
+            gap: 30px;
+            background-color: $box-bg-color;
+            border-radius: 20px;
+
+            img{
+                width: 50%;
+            }
+
+            .follow-info{
+                gap: 40px;
+
+                form{
+                    @include flex(column);
+                    gap: 16px;
+                    align-items: stretch;
+        
+                    input{
+                        padding: 19px 20px;
+                    }
+                    .btn-join{
+                        padding: 19px 50px;
+                    }
+                }
+            }
+        }
     }
 }
 
 @media (min-width: $bp-lg) {
     .follow {
-        @include desktop-limitation();
+      @include desktop-limitation();
+  
+      &-card {
+        padding: 60px;
+        gap: 80px;
+  
+        img {
+          max-height: 425px;
+        }
+  
+        .follow-info {
+          form {
+            position: relative;
+            display: flex;
+  
+            input {
+              padding: 19px 220px 20px 20px;
+              width: 100%;
+            }
+  
+            .btn-join {
+              position: absolute;
+              right: 0;
+              padding: 19px 50px;
+            }
+          }
+        }
+      }
     }
-}
+  }
+  
