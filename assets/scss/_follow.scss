@@ -1,0 +1,53 @@
+.follow {
+    margin: 0 auto;
+    @include phone-limitation();
+
+    &-card {
+        @include flex(column);
+
+        img {
+            max-width: 100%;
+            border-radius: 20px;
+            aspect-ratio: 1.24 / 1;
+            object-fit: cover;
+        }
+        .follow-text{
+            margin: 30px 0 40px;
+        }
+        form{
+            @include flex(column);
+            gap: 16px;
+            align-items: stretch;
+
+            input{
+                width: 100%;
+                padding: 11px 20px;
+                border: 1px solid $span-text-color;
+                border-radius: 20px;
+                appearance: none;
+                @include text-style(1rem);
+                &::placeholder{
+                    color: $main-bg-color;
+                }
+            }
+            .btn{
+                background-color: $main-color;
+                padding: 11px 20px;
+                height: 100%;
+                border: 1px solid $main-color;
+            }
+        }
+    }
+}
+
+@media (min-width: $bp-md) {
+    .follow {
+        @include tablet-limitation();
+    }
+}
+
+@media (min-width: $bp-lg) {
+    .follow {
+        @include desktop-limitation();
+    }
+}

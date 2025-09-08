@@ -38,30 +38,34 @@
             h3 {
                 @include text-style(1.375rem, 600);
             }
-            .box_small_pic_n_text p{
+
+            .box_small_pic_n_text p {
                 font-family: $font-mono, monospace;
             }
-            .nft-stats{
+
+            .nft-stats {
                 @include flex(row, space-between, center);
                 margin-top: 20px;
 
                 .wrap-stat {
                     @include flex(column);
                     gap: 8px;
-    
+
                     span {
                         color: $span-text-color;
                     }
-    
-                    span, p {
+
+                    span,
+                    p {
                         font-family: $font-mono, monospace;
                         @include text-style(0.75rem, 400, 110%);
                     }
                 }
-                .wrap-stat:nth-child(2){
+
+                .wrap-stat:nth-child(2) {
                     text-align: right;
                 }
-            } 
+            }
         }
     }
 }
@@ -92,12 +96,24 @@
             grid-row: 2;
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
+
+            .recommended-card:nth-child(3){
+                display: none;
+            }
+
+            .recommended-info {
+                .nft-stats {
+                    .wrap-stat p {
+                        @include text-style(1rem, 400, 140%);
+                    }
+                }
+            }
         }
     }
 }
 
 @media (min-width: $bp-lg) {
-    .recommended{
+    .recommended {
         @include desktop-limitation();
         grid-template-columns: 1fr auto;
         grid-template-rows: auto auto;
@@ -118,6 +134,10 @@
             grid-column: 1 / 3;
             grid-row: 2;
             grid-template-columns: repeat(3, 1fr);
+            
+            .recommended-card:nth-child(3){
+                display: flex;
+            }
         }
     }
 }

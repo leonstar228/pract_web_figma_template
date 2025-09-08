@@ -1,0 +1,80 @@
+.tutorial {
+    @include flex(column);
+    margin: 0 auto;
+    gap: 40px;
+    @include phone-limitation();
+
+    &-container {
+        display: grid;
+        gap: 20px;
+
+        .tutorial-card {
+            border-radius: 20px;
+            padding: 20px;
+            overflow: hidden;
+            background-color: $box-bg-color;
+            @include flex(row, center, center);
+            gap: 20px;
+
+            img {
+                width: 33%;
+            }
+
+            .tutorial-info {
+                @include flex(column);
+                gap: 10px;
+
+                h3 {
+                    @include text-style(1rem, 600);
+                }
+
+                p {
+                    @include text-style(0.75rem)
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $bp-md) {
+    .tutorial {
+        @include tablet-limitation();
+
+        &-container {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+
+            .tutorial-card {
+                flex-direction: column;
+                padding: 10px 20px 47px;
+                text-align: center;
+
+                img{
+                    width: 60%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $bp-lg) {
+    .tutorial {
+        @include desktop-limitation();
+        gap: 48px;
+
+        &-container {
+            .tutorial-card {
+                padding: 10px 30px 30px;
+
+                .tutorial-info {
+                    h3 {
+                        @include text-style(1.375rem, 600);
+                    }
+                    p{
+                        @include text-style(1rem);
+                    }
+                }
+            }
+        }
+    }
+}
