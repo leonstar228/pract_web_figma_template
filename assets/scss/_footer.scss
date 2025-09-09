@@ -1,0 +1,137 @@
+.footer {
+    background-color: $box-bg-color;
+
+    &-inner {
+        @include phone-limitation();
+
+        .footer-wrapper {
+            @include flex(column);
+            gap: 30px;
+            margin-bottom: 30px;
+
+            .footer-box {
+                @include flex(column);
+                gap: 20px;
+
+                h2 {
+                    @include text-style(1.375rem, 700, 160%);
+                    font-family: $font-mono, monospace;
+                }
+
+                .box-logo {
+                    @include flex(row, flex-start, center);
+                    gap: 12px;
+
+                    img {
+                        margin-top: 5px;
+                    }
+                }
+
+                p,
+                a {
+                    @include text-style(1rem);
+                    color: $footer-text-color;
+                }
+
+                .box-social_media {
+                    @include flex();
+                    gap: 10px;
+                    margin-top: -5px
+                }
+
+                form {
+                    @include flex(column);
+                    gap: 16px;
+                    align-items: stretch;
+
+                    input {
+                        width: 100%;
+                        padding: 11px 20px;
+                        border: 1px solid $span-text-color;
+                        border-radius: 20px;
+                        appearance: none;
+                        @include text-style(1rem);
+
+                        &::placeholder {
+                            color: $main-bg-color;
+                        }
+                    }
+
+                    .btn-join {
+                        border-radius: 20px;
+                        @include flex(row, center, center);
+                        color: $main-text-color;
+                        background-color: $main-color;
+                        padding: 11px 20px;
+                        height: 100%;
+                        border: 1px solid $main-color;
+                    }
+                }
+            }
+        }
+
+        hr {
+            border: 1px solid $span-text-color;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: $footer-text-color;
+            @include text-style(0.75rem, 400, 110%);
+        }
+    }
+}
+
+@media (min-width: $bp-md) {
+    .footer {
+        &-inner {
+            @include tablet-limitation();
+            max-width: 2000px;
+            margin: 0 auto;
+
+            .footer-wrapper {
+                margin-bottom: 49px;
+
+                .footer-box {
+                    form {
+                        position: relative;
+                        display: flex;
+
+                        input {
+                            padding: 19px 220px 20px 20px;
+                            width: 100%;
+                        }
+
+                        .btn-join {
+                            position: absolute;
+                            right: 0;
+                            padding: 19px 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $bp-lg) {
+    .footer {
+        &-inner {
+            @include desktop-limitation(40px);
+
+            .footer-wrapper {
+                @include flex(row, space-between);
+                margin-bottom: 30px;
+
+                .box-logo, h2{
+                    margin-bottom: 5px;
+                }
+
+                .footer-box:nth-child(1) p,
+                .footer-box:nth-child(3) p{
+                    width: 70%;
+                }
+            }
+        }
+    }
+}
