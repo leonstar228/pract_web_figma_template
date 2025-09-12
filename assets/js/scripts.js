@@ -70,8 +70,21 @@ updateHeaderHeight();
 window.addEventListener('resize', updateHeaderHeight);
 
 
+function handleSubmitFollow(event) {
+    event.preventDefault();
+    document.getElementById('emailInputFollow').placeholder = '';
+    alert('Форма відправлена!');
+}
+
 function handleSubmit(event) {
     event.preventDefault();
+    
+    const emailInput = event.target.querySelector('input[type="email"]');
+    
+    if (emailInput) {
+        emailInput.value = '';
+        emailInput.placeholder = 'Enter your email here'; 
+    }
+    
     alert('Форма відправлена!');
-    document.getElementById('emailInput').placeholder = '';
 }
