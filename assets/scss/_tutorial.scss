@@ -29,7 +29,8 @@
                 }
 
                 p {
-                    @include text-style(0.75rem)
+                    @include text-style(0.75rem);
+                    text-transform: none;
                 }
             }
         }

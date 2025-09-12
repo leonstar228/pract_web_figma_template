@@ -17,7 +17,7 @@ const cards = document.querySelectorAll('.catagory-card');
 
 cards.forEach((card, index) => {
     const bgPhoto = card.querySelector('.bg-photo');
-    bgPhoto.style.backgroundImage = `url(assets/img/catagory-pic-${index + 1}.png)`;
+    bgPhoto.style.backgroundImage = `url(assets/img/catagory-pic-${index + 1}.webp)`;
 });
 
 
@@ -68,3 +68,10 @@ function updateHeaderHeight() {
 updateHeaderHeight();
 
 window.addEventListener('resize', updateHeaderHeight);
+
+
+function handleSubmit(event) {
+    event.preventDefault();
+    alert('Форма відправлена!');
+    document.getElementById('emailInput').placeholder = '';
+}
