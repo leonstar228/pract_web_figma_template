@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import './variables', './header', './hero', './collection', './creators', './catagories', './recommended', './auction', './tutorial', './follow', './footer';
+
 // ==============================
 // Global
 // ==============================
@@ -15,11 +16,13 @@ body {
     color: $main-text-color;
     font-family: $font-primary;
 }
-html, body{
+
+html,
+body {
     overflow-x: hidden;
 }
 
-main{
+main {
     max-width: 1280px;
     margin: 0 auto;
 }
@@ -57,11 +60,12 @@ ul {
     @include text-style(1rem);
 }
 
-.text-nft-name{
+.text-nft-name {
     @include text-style(1.375rem, 600);
     margin-bottom: 10px;
 }
-.text-nickname{
+
+.text-nickname {
     @include text-style(1rem);
 }
 
@@ -75,11 +79,11 @@ ul {
 .box_small_pic_n_text {
     @include flex(row, flex-start, center);
     gap: 12px;
-    
+
     img {
         width: 24px;
         border-radius: 50%;
-      }
+    }
 }
 
 .btn {

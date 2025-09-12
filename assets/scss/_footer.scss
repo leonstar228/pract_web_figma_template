@@ -13,7 +13,7 @@
             .footer-box {
                 @include flex(column);
                 gap: 20px;
-
+                
                 h2 {
                     @include text-style(1.375rem, 700, 160%);
                     font-family: $font-mono, monospace;
@@ -23,7 +23,7 @@
                     @include flex(row, flex-start, center);
                     gap: 12px;
 
-                    img {
+                    .logo-text {
                         margin-top: 5px;
                     }
                 }
@@ -96,10 +96,11 @@
                     form {
                         position: relative;
                         display: flex;
+                        width: fit-content;
 
                         input {
                             padding: 19px 220px 20px 20px;
-                            width: 100%;
+                            width: fit-content;
                         }
 
                         .btn-join {
@@ -122,14 +123,17 @@
             .footer-wrapper {
                 @include flex(row, space-between);
                 margin-bottom: 30px;
+                gap: 30px;
 
                 .box-logo, h2{
                     margin-bottom: 5px;
                 }
 
-                .footer-box:nth-child(1) p,
+                .footer-box:nth-child(1) p{
+                    width: 240px;
+                }
                 .footer-box:nth-child(3) p{
-                    width: 70%;
+                    width: 330px;
                 }
             }
         }

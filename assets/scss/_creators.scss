@@ -2,6 +2,8 @@
     @include flex(column);
     gap: 40px;
     margin: 0 auto;
+    width: 100%; /* Додано для забезпечення повної ширини */
+    max-width: 100%; /* Забезпечує, що секція не буде ширше за батьківський контейнер */
     @include phone-limitation();
 
     a {
@@ -80,13 +82,16 @@
     .creators {
         @include tablet-limitation();
         display: grid;
-        grid-template-columns: 1fr auto;
+        grid-template-columns: 1fr auto; /* Змінено з 1fr auto на 1fr auto */
         grid-template-rows: auto auto;
         align-items: start;
+        justify-items: end; /* Додано для вирівнювання елементів сітки по правому краю */
 
         &-text {
             grid-column: 1 / 2;
             grid-row: 1;
+            justify-self: start; /* Забезпечує вирівнювання тексту по лівому краю */
+            width: 100%; /* Забезпечує повну ширину для текстового елемента */
         }
 
         & > .btn {
@@ -95,6 +100,7 @@
             align-self: center;
             white-space: nowrap;
             margin: 0;
+            margin-left: auto; /* Додано для вирівнювання кнопки праворуч */
         }
 
         &-container {
@@ -116,16 +122,19 @@
         grid-template-columns: 1fr auto;
         grid-template-rows: auto auto;
         gap: 60px;
+        justify-items: end; /* Додано для вирівнювання елементів сітки по правому краю */
 
         &-text {
             grid-column: 1 / 2;
             grid-row: 1;
+            justify-self: start; /* Забезпечує вирівнювання тексту по лівому краю */
         }
 
         & > .btn {
             grid-column: 2 / 3;
             grid-row: 1;
             align-self: self-end;
+            margin-left: auto; /* Додано для вирівнювання кнопки праворуч */
         }
 
         &-container {
@@ -137,7 +146,6 @@
             .creator-card {
                 @include flex(column, center, center);
                 text-align: center;
-                aspect-ratio: 1 / 1;
 
                 &:nth-child(n+7) {
                     display: flex;

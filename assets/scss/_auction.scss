@@ -43,7 +43,8 @@
                 padding: 30px;
                 border-radius: 12px;
                 @include flex(column);
-                gap: 10px;
+                gap: 20px;
+                height: fit-content;
 
                 p {
                     @include text-style(0.75rem, 400, 110%);
@@ -52,6 +53,7 @@
 
                 .time-box {
                     @include flex(row, space-between);
+                    gap: 10px;
 
                     div {
                         @include flex(column, flex-start, center);
@@ -91,7 +93,7 @@
             .auction-content {
                 padding: 60px 82px;
                 display: grid;
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr auto;
                 grid-template-rows: repeat(3, auto);
 
                 h2 {
@@ -115,8 +117,9 @@
             }
             .auction-content {
                 @include desktop-limitation();
+
                 .timer {
-                    max-width: 600px;
+                    max-width: 400px;
                 }
             }
         }

@@ -49,7 +49,7 @@
 
 @media (min-width: $bp-md) {
     .follow {
-        @include tablet-limitation();
+        @include tablet-limitation(40px, 80px);
 
         &-card{
             @include phone-limitation();
