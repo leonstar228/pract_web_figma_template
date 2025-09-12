@@ -16,6 +16,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px 15px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 .header-inner .logo {
   display: flex;
