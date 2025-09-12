@@ -3,6 +3,7 @@
 
     &-inner {
         @include phone-limitation();
+        max-width: 1280px;
 
         .footer-wrapper {
             @include flex(column);
@@ -86,7 +87,6 @@
     .footer {
         &-inner {
             @include tablet-limitation();
-            max-width: 2000px;
             margin: 0 auto;
 
             .footer-wrapper {
