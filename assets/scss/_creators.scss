@@ -6,7 +6,7 @@
     max-width: 100%; /* Забезпечує, що секція не буде ширше за батьківський контейнер */
     @include phone-limitation();
 
-    a {
+    .btn {
         border: 2px solid $main-color;
     }
 

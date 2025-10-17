@@ -1,0 +1,158 @@
+.artist-info {
+    margin-top: var(--header-height);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    .banner {
+        height: 50vh;
+        background: linear-gradient(180deg, rgba(151, 71, 255, 0) 21.88%, $main-color 95.31%), url(../assets/img/banner.png);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            bottom: -50px;
+            left: calc(50% - 60px);
+            border-radius: 20px;
+            border: 2px solid $main-bg-color;
+        }
+    }
+
+    &-wrapper {
+        @include phone-limitation(30px);
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+
+        .artist-info-main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            h1 {
+                @include text-style(1.75rem, 600);
+            }
+
+            .box-actions {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .btn:nth-of-type(1) {
+                    background-color: $main-color;
+                    padding: 20px;
+                }
+
+                .btn:nth-of-type(2) {
+                    border: 2px solid $main-color;
+                    padding: 20px 30px;
+                }
+            }
+        }
+
+        .artist-info-details {
+            display: flex;
+            gap: 30px;
+            flex-direction: column;
+
+            .info-wrapper {
+                @include flex(column);
+                gap: 10px;
+
+                .title {
+                    color: $span-text-color;
+                    font-family: $font-mono;
+                }
+
+                .social-wrapper {
+                    @include flex();
+                    gap: 10px;
+                }
+            }
+        }
+    }
+}
+
+.nfts {
+    .nft-choise {
+        @include flex(row, space-between, center);
+        @include phone-limitation(10px, 0px);
+        border-top: 1px solid $box-bg-color;
+
+        .nft-kind {
+            @include flex(row, center);
+            gap: 16px;
+            flex: 1;
+            padding: 19px 0;
+
+            .kind {
+                @include text-style(1rem, 600, 140%);
+                color: $span-text-color;
+            }
+
+            .chosen-text {
+                color: $main-text-color;
+            }
+
+            .amount-wrapper {
+                display: none;
+            }
+        }
+
+        .chosen-box {
+            border-bottom: 2px solid $span-text-color;
+        }
+    }
+
+    .grid3-container {
+        background-color: $box-bg-color;
+        @include phone-limitation(80px);
+
+        .nft-card {
+            .nft-info {
+                background-color: $main-bg-color;
+            }
+        }
+    }
+}
+
+@media (min-width: $bp-md) {
+    .artist-info {
+        &-wrapper {
+            @include tablet-limitation(30px);
+
+            .artist-info-main{
+                .box-actions{
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+
+    .nfts {
+        .nft-choise {
+            @include tablet-limitation(10px, 0px);
+        }
+
+        .grid3-container {
+            @include tablet-limitation(80px);
+        }
+    }
+}
+
+@media (min-width: $bp-lg) {
+.artist-info {
+        &-wrapper {
+            @include tablet-limitation(30px);
+
+            .artist-info-main{
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+    }
+}

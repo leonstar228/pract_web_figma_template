@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import './variables', './header', './hero', './collection', './creators', './catagories', './recommended', './auction', './tutorial', './follow', './footer';
+@import './variables', './header', './hero', './collection', './creators', './catagories', './recommended', './auction', './tutorial', './follow', './footer', './artist-page';
 
 // ==============================
 // Global
@@ -15,20 +15,25 @@ body {
     background-color: $main-bg-color;
     color: $main-text-color;
     font-family: $font-primary;
+    display: flex;
+    flex-direction: column;
 }
 
 html,
 body {
     overflow-x: hidden;
+    height: 100%;
 }
 
 main {
     max-width: 1280px;
     margin: 0 auto;
+    flex: 1;
 }
 
 a {
     text-decoration: none;
+    color: #ffffff;
 }
 
 ul {
@@ -89,25 +94,115 @@ ul {
 .btn {
     @include flex(row, center, center);
     border-radius: 20px;
-    padding: 19px 0;
+    padding: 20px 0;
     width: 100%;
     color: $main-text-color;
 }
+
+// ==============================
+// 3-grid container
+// ==============================
+.grid3-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 30px;
+}
+
+// ==============================
+// nft-card
+// ==============================
+.nft-card {
+    position: relative;
+    width: 100%;
+    @include flex(column);
+    background-color: $box-bg-color;
+    border-radius: 20px;
+    overflow: hidden;
+
+    .nft-pic {
+        width: 100%;
+        aspect-ratio: 1.3 / 1;
+        object-fit: cover;
+    }
+
+    .nft-info {
+        @include flex(column);
+        gap: 5px;
+        padding: 20px 20px 25px;
+
+        h3 {
+            @include text-style(1.375rem, 600);
+        }
+
+        .box_small_pic_n_text p {
+            font-family: $font-mono, monospace;
+        }
+
+        .nft-stats {
+            @include flex(row, space-between, center);
+            margin-top: 20px;
+
+            .wrap-stat {
+                @include flex(column);
+                gap: 8px;
+
+                span {
+                    color: $span-text-color;
+                }
+
+                span,
+                p {
+                    font-family: $font-mono, monospace;
+                    @include text-style(0.75rem, 400, 110%);
+                }
+            }
+
+            .wrap-stat:nth-child(2) {
+                text-align: right;
+            }
+        }
+    }
+}
+
 
 // ==============================
 // Media Queries
 // ==============================
 @media (min-width: $bp-md) {
     .btn {
-        padding: 19px 50px;
+        padding: 20px 50px;
         width: fit-content;
+    }
+
+    .grid3-container {
+        grid-column: 1 / 3;
+        grid-row: 2;
+        grid-template-columns: repeat(2, 1fr);
+
+        .nft-info {
+            .nft-stats {
+                .wrap-stat p {
+                    @include text-style(1rem, 400, 140%);
+                }
+            }
+        }
     }
 }
 
 @media (min-width: $bp-lg) {
     main {
-        p, h2, h3, span {
+
+        p,
+        h2,
+        h3,
+        span {
             text-transform: capitalize;
+        }
+        .grid3-container {
+            grid-column: 1 / 3;
+            grid-row: 2;
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 

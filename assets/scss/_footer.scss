@@ -1,5 +1,6 @@
 .footer {
     background-color: $box-bg-color;
+    border-top: 2px solid $main-bg-color;
 
     &-inner {
         @include phone-limitation();
