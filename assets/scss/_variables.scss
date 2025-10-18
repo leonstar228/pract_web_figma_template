@@ -4,6 +4,7 @@ $main-bg-color: #2B2B2B;
 $main-text-color: #fff;
 $span-text-color: #858584;
 $footer-text-color: #CCCCCC;
+$change-color: #00AC4F;
 
 $font-primary: "Work Sans", sans-serif;
 $font-mono: "Space Mono", monospace;
@@ -25,20 +26,21 @@ $bp-lg: 1280px;
     align-items: $align;
 }
 
-@mixin text-style($size, $weight: 400, $lh: 140%) {
+@mixin text-style($size: 1rem, $weight: 400, $lh: 140%) {
     font-size: $size;
     font-weight: $weight;
     line-height: $lh;
 }
 
-@mixin btn($bg-color: $main-color, $radius: 20px, $padding: 19px 30px) {
-    @include flex(center, center);
+@mixin btn($bg-color: $main-color, $padding: 20px 30px, $border: none, $radius: 20px) {
+    @include flex(row, center, center);
+    @include text-style(1rem, 600);
     background-color: $bg-color;
     border-radius: $radius;
     padding: $padding;
-    color: white;
     cursor: pointer;
     text-align: center;
+    border: $border;
 }
 
 @mixin phone-limitation($top: 40px, $bottom: $top) {

@@ -1,7 +1,5 @@
 .artist-info {
-    margin-top: var(--header-height);
-    display: flex;
-    flex-direction: column;
+    @include flex(column);
     gap: 50px;
 
     .banner {
@@ -24,40 +22,34 @@
 
     &-wrapper {
         @include phone-limitation(30px);
-        display: flex;
+        @include flex(column);
         gap: 30px;
-        flex-direction: column;
 
         .artist-info-main {
-            display: flex;
-            flex-direction: column;
+            @include flex(column);
             gap: 20px;
 
-            h1 {
-                @include text-style(1.75rem, 600);
-            }
-
             .box-actions {
-                display: flex;
-                flex-direction: column;
+                @include flex(column);
                 gap: 20px;
 
-                .btn:nth-of-type(1) {
-                    background-color: $main-color;
-                    padding: 20px;
+                .button {
+                    gap: 12px;
                 }
 
-                .btn:nth-of-type(2) {
-                    border: 2px solid $main-color;
-                    padding: 20px 30px;
+                .button:nth-of-type(1) {
+                    @include btn($main-color, 20px 20px);
+                }
+
+                .button:nth-of-type(2) {
+                    @include btn(transparent, 20px 30px, 2px solid $main-color);
                 }
             }
         }
 
         .artist-info-details {
-            display: flex;
+            @include flex(column);
             gap: 30px;
-            flex-direction: column;
 
             .info-wrapper {
                 @include flex(column);
@@ -77,81 +69,54 @@
     }
 }
 
-.nfts {
-    .nft-choise {
-        @include flex(row, space-between, center);
-        @include phone-limitation(10px, 0px);
-        border-top: 1px solid $box-bg-color;
-
-        .nft-kind {
-            @include flex(row, center);
-            gap: 16px;
-            flex: 1;
-            padding: 19px 0;
-
-            .kind {
-                @include text-style(1rem, 600, 140%);
-                color: $span-text-color;
-            }
-
-            .chosen-text {
-                color: $main-text-color;
-            }
-
-            .amount-wrapper {
-                display: none;
-            }
-        }
-
-        .chosen-box {
-            border-bottom: 2px solid $span-text-color;
-        }
-    }
-
-    .grid3-container {
-        background-color: $box-bg-color;
-        @include phone-limitation(80px);
-
-        .nft-card {
-            .nft-info {
-                background-color: $main-bg-color;
-            }
-        }
-    }
-}
 
 @media (min-width: $bp-md) {
-    .artist-info {
-        &-wrapper {
-            @include tablet-limitation(30px);
 
-            .artist-info-main{
-                .box-actions{
-                    flex-direction: row;
+    main {
+        .artist-info {
+            &-wrapper {
+                @include tablet-limitation(30px);
+
+                .artist-info-main {
+                    .box-actions {
+                        flex-direction: row;
+                    }
                 }
             }
         }
-    }
 
-    .nfts {
-        .nft-choise {
-            @include tablet-limitation(10px, 0px);
-        }
+        .artist {
+            .nft-choise {
+                @include tablet-limitation(10px, 0px);
+            }
 
-        .grid3-container {
-            @include tablet-limitation(80px);
+            .grid3-container {
+                @include tablet-limitation(80px);
+            }
         }
     }
 }
 
 @media (min-width: $bp-lg) {
-.artist-info {
-        &-wrapper {
-            @include tablet-limitation(30px);
+    main {
+        .artist-info {
+            &-wrapper {
+                @include desktop-limitation(40px);
 
-            .artist-info-main{
-                flex-direction: row;
-                justify-content: space-between;
+                .artist-info-main {
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+            }
+        }
+
+        .artist {
+            .nft-choise {
+                @include desktop-limitation(10px, 0px);
+            }
+
+            .grid3-container {
+                @include desktop-limitation(80px);
             }
         }
     }

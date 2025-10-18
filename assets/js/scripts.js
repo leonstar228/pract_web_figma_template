@@ -8,8 +8,8 @@ burgerMenu.addEventListener('click', () => {
     closeIcon.classList.toggle('d-none')
     headerNav.classList.toggle('header-nav__open')
     
-    document.documentElement.style.overflow = 
-        document.documentElement.style.overflow === 'hidden' ? '' : 'hidden';
+    document.documentElement.classList.toggle('no-scroll');
+    document.body.classList.toggle('no-scroll');
 })
 
 
@@ -67,18 +67,9 @@ window.addEventListener('scroll', () => {
   header.style.backgroundColor = colors[section] || colors[colors.length - 1];
 });
 
-function updateHeaderHeight() {
-  root.style.setProperty('--header-height', `${header.offsetHeight}px`);
-}
-
-updateHeaderHeight();
-
-window.addEventListener('resize', updateHeaderHeight);
-
-
 function handleSubmitFollow(event) {
     event.preventDefault();
-    document.getElementById('emailInputFollow').placeholder = '';
+    doument.getElementById('emailInputFollow').placeholder = '';
     alert('Форма відправлена!');
 }
 

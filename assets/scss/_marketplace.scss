@@ -1,0 +1,86 @@
+main {
+    .search {
+        @include flex(column);
+        gap: 30px;
+
+        .title {
+            @include flex(column);
+            gap: 10px;
+        }
+
+        @include phone-limitation();
+
+        .search-bar-wrapper {
+            @include flex();
+            width: 100%;
+            border-radius: 20px;
+            padding: 18px 20px;
+            border: 1px solid $box-bg-color;
+
+            .search-bar {
+                width: 100%;
+                border: none;
+                color: white;
+                background-color: transparent;
+                
+                &::placeholder {
+                    @include text-style();
+                    color: $span-text-color;
+                }
+
+                img{
+                    height: 24px;
+                    width: 24px;
+                }
+            }
+        }
+    }
+
+    .marketplace {
+        .nft-choise {
+            @include phone-limitation(10px, 0px);
+        }
+
+        .grid3-container {
+            @include phone-limitation(40px);
+        }
+    }
+}
+
+@media (min-width: $bp-md) {
+
+    main {
+        .search {
+            @include tablet-limitation(60px);
+        }
+
+        .marketplace {
+            .nft-choise {
+                @include tablet-limitation(10px, 0px);
+            }
+
+            .grid3-container {
+                @include tablet-limitation(60px);
+            }
+        }
+    }
+}
+
+@media (min-width: $bp-lg) {
+    main {
+        .search {
+            @include desktop-limitation();
+        }
+
+        .marketplace {
+
+            .nft-choise {
+                @include desktop-limitation(10px, 0px);
+            }
+
+            .grid3-container {
+                @include desktop-limitation(60px);
+            }
+        }
+    }
+}

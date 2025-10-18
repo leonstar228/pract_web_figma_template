@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artist page</title>
+    <title>Marketplace</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
     <header class="header">
         <div class="header-inner">
@@ -39,74 +37,29 @@
         </div>
     </header>
     <main>
-        <section class="artist-info">
-            <div class="banner">
-                <img class="avatar" src="./assets/img/main-avatar-10.webp" alt="">
+        <section class="search">
+            <div class="title">
+                <h1 class="h1-title">Browse Marketplace</h1>
+                <p class="text-regular">Browse through more than 50k NFTs on the NFT Marketplace.</p>
             </div>
-            <div class="artist-info-wrapper">
-                <div class="artist-info-main">
-                    <h1 class="h1-title">Animakid</h1>
-                    <div class="box-actions">
-                        <a class="button" href="">
-                            <img src="./assets/icons/copy.svg" alt="">
-                            <p>0xc0E3...B79C</p>
-                        </a>
-                        <a class="button" href="">
-                            <img src="./assets/icons/plus.svg" alt="">
-                            <p>Follow</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="artist-info-details">
-                    <div class="hero-stats-box">
-                        <div>
-                            <p>240k+</p>
-                            <p class="text-regular">Volume</p>
-                        </div>
-                        <div>
-                            <p>100k+</p>
-                            <p class="text-regular">NFTs Sold</p>
-                        </div>
-                        <div>
-                            <p>240k+</p>
-                            <p class="text-regular">Followers</p>
-                        </div>
-                    </div>
-                    <div class="info-wrapper">
-                        <p class="title text-regular">Bio</p>
-                        <p class="text-regular">The internet's friendliest designer kid.</p>
-                    </div>
-                    <div class="info-wrapper">
-                        <p class="title text-regular">Links</p>
-                        <div class="social-wrapper">
-                            <img src="./assets/icons/internet.svg" alt="">
-                            <img src="./assets/icons/discord.svg" alt="">
-                            <img src="./assets/icons/youtube.svg" alt="">
-                            <img src="./assets/icons/twitter.svg" alt="">
-                            <img src="./assets/icons/instagram.svg" alt="">
-                        </div>
-                    </div>
-                </div>
+            <div class="search-bar-wrapper">
+                <input class="search-bar" placeholder="Search your favourite NFTs" type="text">
+                <img src="./assets/icons/search.svg" alt="">
             </div>
         </section>
-        <section class="nfts artist">
+
+        <section class="nfts marketplace">
             <div class="nft-choise">
                 <div class="nft-kind chosen-box">
-                    <p class="kind text-regular chosen-text">Created</p>
+                    <p class="kind text-regular chosen-text">NFTs</p>
                     <div class="amount-wrapper chosen-amount">
                         <p>302</p>
                     </div>
                 </div>
                 <div class="nft-kind">
-                    <p class="kind text-regular">Owned</p>
+                    <p class="kind text-regular">Collections</p>
                     <div class="amount-wrapper">
                         <p>67</p>
-                    </div>
-                </div>
-                <div class="nft-kind">
-                    <p class="kind text-regular">Collection</p>
-                    <div class="amount-wrapper">
-                        <p>4</p>
                     </div>
                 </div>
             </div>
@@ -354,5 +307,4 @@
 
     <script src="./assets/js/scripts.js"></script>
 </body>
-
 </html>
